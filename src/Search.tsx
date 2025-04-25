@@ -76,10 +76,6 @@ const Search: React.FC = () => {
         return elements
     }
 
-        if (results.length === 0) {
-            return 
-        }
-
     return <>
         <search className='flex flex-col mt-4 w-full'>
             <p className='block text-grey mb-2'>what skill do you value?</p>
@@ -97,9 +93,9 @@ const Search: React.FC = () => {
                     </div>
                 : (
                     results.length === 0
-                        ? <p>I haven't learned '{search}' yet 😔</p>
+                        ? <p className='text-navy'>I haven't learned '{search}' yet 😔</p>
                         :   <div className='flex flex-row w-max h-32 gap-12 mt-4'>
-                                {getTechnologyElementList().slice(0, results.length / 2)}
+                                {getTechnologyElementList().slice(0, results.length)}
                             </div>
                 )
             }
