@@ -2,7 +2,18 @@
 
 @theme {
     --font-sans: "Plus Jakarta Sans", sans-serif;
+
     --color-navy: #0F0F3D;
     --color-grey: #8095A8;
     --color-lightgrey: #A0B8CE;
+
+    @keyframes carousel {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
 }
