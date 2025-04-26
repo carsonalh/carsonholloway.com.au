@@ -1,10 +1,10 @@
 import Search from "./Search";
 
 const App: React.FC = () => {
-    return <main className="max-w-full sm:max-w-380 pl-8 pr-8 lg:pl-32 lg:pr-32 pt-8 ml-auto mr-auto">
+    return <main className="max-w-full sm:max-w-280 pl-8 pr-8 lg:pl-32 lg:pr-32 pt-8 ml-auto mr-auto">
         <nav className="flex flex-row w-fill justify-end items-center">
             <a className="ml-4 block" href="mailto:carsonalh@gmail.com">
-                <svg xmlns="http://www.w3.org/2000/svg" className="size-8 fill-navy hover:fill-grey transition-colors duration-100" viewBox="0 0 512 512">
+                <svg xmlns="http://www.w3.org/2000/svg" className="size-7 fill-navy hover:fill-grey transition-colors duration-100" viewBox="0 0 512 512">
                     <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
                 </svg>
             </a>
@@ -21,30 +21,31 @@ const App: React.FC = () => {
         </nav>
 
         <section className="mt-12">
-            <div>
-                <h1 className="font-extrabold text-navy text-4xl mb-4">carson holloway</h1>
-                <h2 className="text-grey text-2xl mb-3">full-stack developer</h2>
-                <h3 className="text-lightgrey text-xl">brisbane, au</h3>
-            </div>
+            <h1 className="font-extrabold text-navy text-4xl mb-4">carson holloway</h1>
+            <h2 className="text-grey text-2xl mb-3">full-stack developer</h2>
+            <h3 className="text-lightgrey text-xl mb-3">brisbane, au</h3>
+        </section>
 
-            <div className="hidden">
-                <h2>this site comes in</h2>
-                <ul>
+        <section className="mt-12">
+            <div className='flex flex-col sm:items-end'>
+                <h2 className="font-extrabold text-2xl text-navy mb-4">this site comes in</h2>
+                <ul className="flex gap-4 mb-4">
                     <li>react</li>
                     <li>vuejs</li>
                     <li>angular</li>
                     <li>svelte (coming soon)</li>
                 </ul>
+                <p className='text-grey'>see its source <a className='underline' href='https://github.com/carsonalh/carsonholloway.com.au'>on github</a></p>
             </div>
         </section>
 
         <section className="mt-12">
             <h2 className="font-extrabold text-2xl text-navy mb-8">my best technologies</h2>
-            <ul className="grid grid-rows-2 grid-cols-2 items-end gap-y-6 lg:flex lg:flex-row lg:justify-center">
-                <li className="flex flex-col gap-2 items-center text-grey"><img className="lg:h-48" src="nodejs.svg" />node js</li>
-                <li className="flex flex-col gap-2 items-center text-grey"><img className="lg:h-48" src="typescript.svg" />typescript</li>
-                <li className="flex flex-col gap-2 items-center text-grey"><img className="lg:h-48" src="react.svg" />react</li>
-                <li className="flex flex-col gap-2 items-center text-grey"><img className="lg:h-48" src="go.svg" />go</li>
+            <ul className="grid grid-rows-2 grid-cols-2 items-end gap-y-6 sm:flex sm:flex-row sm:justify-evenly">
+                <li className="flex flex-col gap-2 items-center text-grey"><img className="sm:max-h-28" src="nodejs.svg" />node js</li>
+                <li className="flex flex-col gap-2 items-center text-grey"><img className="sm:max-h-28" src="typescript.svg" />typescript</li>
+                <li className="flex flex-col gap-2 items-center text-grey"><img className="sm:max-h-28" src="react.svg" />react</li>
+                <li className="flex flex-col gap-2 items-center text-grey"><img className="sm:max-h-28" src="go.svg" />go</li>
             </ul>
         </section>
 

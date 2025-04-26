@@ -3,6 +3,8 @@
 @theme {
     --font-sans: "Plus Jakarta Sans", sans-serif;
 
+    --text-tiny: 0.675rem;
+
     --color-navy: #0F0F3D;
     --color-grey: #8095A8;
     --color-lightgrey: #A0B8CE;
@@ -13,7 +15,7 @@
         }
 
         100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="69.539154"
+   height="66.635048"
+   viewBox="0 0 18.3989 17.630524"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient5">
+      <stop
+         style="stop-color:#51a5e6;stop-opacity:1;"
+         offset="0"
+         id="stop4" />
+      <stop
+         style="stop-color:#3156cc;stop-opacity:1;"
+         offset="1"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient5"
+       id="linearGradient20"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.37698793,0,0,0.37698793,72.657222,25.290897)"
+       x1="18.05043"
+       y1="10.938726"
+       x2="35.204739"
+       y2="30.084051" />
+    <linearGradient
+       xlink:href="#linearGradient5"
+       id="linearGradient3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.37698793,0,0,0.37698793,72.657222,25.290897)"
+       x1="18.05043"
+       y1="10.938726"
+       x2="35.204739"
+       y2="30.084051" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-82.204969,-17.940263)">
+    <path
+       style="fill:url(#linearGradient3);stroke-width:0.0997446"
+       d="m 98.855656,19.540723 a 1.7481635,1.7481635 0 0 0 -1.748214,1.748213 1.7481635,1.7481635 0 0 0 1.748214,1.747697 1.7481635,1.7481635 0 0 0 1.748214,-1.747697 1.7481635,1.7481635 0 0 0 -1.748214,-1.748213 z"
+       id="path14" />
+    <path
+       style="fill:url(#linearGradient20);stroke-width:0.0997446"
+       d="m 90.854402,17.960144 a 0.70013137,0.70013137 0 0 0 -0.486274,0.42478 l -1.684135,4.299479 a 3.0636116,3.0636116 0 0 1 -1.734778,1.734779 l -4.29948,1.684651 a 0.70013137,0.70013137 0 0 0 0,1.303797 l 4.29948,1.684651 a 3.0636116,3.0636116 0 0 1 1.734778,1.734778 l 1.684135,4.298962 a 0.70013137,0.70013137 0 0 0 1.303796,0 l 1.684652,-4.298962 a 3.0636116,3.0636116 0 0 1 1.734777,-1.734778 l 4.299479,-1.684651 a 0.70013137,0.70013137 0 0 0 0,-1.303797 l -4.299479,-1.684651 a 3.0636116,3.0636116 0 0 1 -1.734777,-1.734779 l -1.684652,-4.299479 a 0.70013137,0.70013137 0 0 0 -0.817522,-0.42478 z"
+       id="path13" />
+  </g>
+</svg>
