@@ -93,13 +93,13 @@ const Search: React.FC = () => {
                         break
                 }
 
-                const imageTitle = `${r.experience} of ${r.displayName ?? r.name} experience`
+                const imageTitle = <><strong>{r.experience}</strong> of {r.displayName ?? r.name} experience</>
 
                 elements.push(<div className='flex flex-col gap-2 min-w-14 items-center' key={String(i) + r.name}>
                     <div className='size-18 relative group'>
                         <img src={`/images/${r.name}-plain.svg`} />
                         <img className={`${imageSizeClass} absolute right-0 top-0 transform-[translateX(50%)_translateY(-50%)]`} src={imageSrc} />
-                        <div className='absolute bottom-[calc(100%+6*var(--spacing))] hidden p-2 group-hover:block z-10 text-sm text-navy bg-white cursor-default rounded-sm shadow-sm'>{imageTitle}</div>
+                        <div className='absolute bottom-[calc(100%+6*var(--spacing))] hidden p-2 group-hover:block z-10 text-sm text-navy bg-white cursor-default rounded-sm shadow-sm text-center'>{imageTitle}</div>
                     </div>
                     <span className='text-sm text-grey'>{r.displayName ?? r.name}</span>
                 </div>)
