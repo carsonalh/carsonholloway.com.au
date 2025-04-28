@@ -2,7 +2,7 @@ import Search from "./Search";
 
 const App: React.FC = () => {
     return <>
-        <main className='max-w-full sm:max-w-280 pl-8 pr-8 lg:pl-32 lg:pr-32 pt-8 ml-auto mr-auto'>
+        <main className='max-w-full sm:max-w-280 pl-8 pr-8 pb-24 lg:pl-32 lg:pr-32 pt-8 ml-auto mr-auto'>
             <nav className='flex flex-row w-fill justify-end items-center'>
                 <a className='ml-4 block' href='mailto:carsonalh@gmail.com'>
                     <svg xmlns='http://www.w3.org/2000/svg' className='size-7 fill-navy hover:fill-grey transition-colors duration-100' viewBox='0 0 512 512'>
@@ -28,18 +28,6 @@ const App: React.FC = () => {
             </section>
 
             <section className='mt-12'>
-                <div className='flex flex-col sm:items-end'>
-                    <h2 className='font-extrabold text-2xl text-navy mb-4'>this site comes in</h2>
-                    <ul className='flex gap-4 mb-4'>
-                        <li>react</li>
-                        <li>vuejs (coming soon)</li>
-                        <li>angular (coming soon)</li>
-                    </ul>
-                    <p className='text-grey'>see its source <a className='underline' href='https://github.com/carsonalh/carsonholloway.com.au'>on github</a></p>
-                </div>
-            </section>
-
-            <section className='mt-12'>
                 <h2 className='font-extrabold text-2xl text-navy mb-8'>my best technologies</h2>
                 <ul className='grid grid-rows-2 grid-cols-2 items-end gap-y-6 sm:flex sm:flex-row sm:justify-evenly'>
                     <li className='flex flex-col gap-2 items-center text-grey'><img className='sm:max-h-28' src='nodejs.svg' />node js</li>
@@ -55,28 +43,17 @@ const App: React.FC = () => {
             </section>
 
             <section className='mt-12'>
-                <h2 className='font-extrabold text-2xl text-navy mb-2'>experience</h2>
-                <div className='grid grid-cols-[max-content_1fr] min-h-32 gap-4'>
-                    <img className='border-navy h-24' src='/openmarkets_logo_colour.webp' title='openmarkets group' />
-                    <div>
-                        <h3 className='text-xl text-navy mb-2'>back-end developer</h3>
-                    </div>
-                </div>
+                <h2 className='font-extrabold text-2xl text-navy mb-8'>want to learn more?</h2>
+                <p className='text-navy'>
+                    send me an
+                    <a className='ml-1' href='mailto:carsonalh@gmail.com'><span className='underline'>email</span> <img className='size-3 inline mr-1' src='/arrow-up-right-from-square-solid.svg'/></a>,
+                    message me on
+                    <a className='ml-1' href='https://www.linkedin.com/in/carson-holloway-849b2b197/'><span className='underline'>linkedin</span> <img className='size-3 inline mr-1' src='/arrow-up-right-from-square-solid.svg'/></a>,
+                    or <a download className='inline' href='/carson-holloway-full-stack-developer.pdf'><span className='underline'>download my resume</span> <img className='size-3 inline mr-1' src='/arrow-up-right-from-square-solid.svg'/></a>
+                </p>
             </section>
 
-            <section className='mt-12'>
-                <h2 className='font-extrabold text-2xl text-navy mb-2'>education</h2>
-                <div className='grid grid-cols-[max-content_1fr] min-h-32 gap-4'>
-                    <img className='border-navy h-24' src='/uq-logo.svg' title='the university of queensland' />
-                    <div>
-                        <h3 className='text-xl text-navy mb-2'>bachelor of computer science</h3>
-                    </div>
-                </div>
-            </section>
         </main>
-        <footer className="mt-12 p-12 bg-navy text-white text-center">
-        &copy; carson holloway 2025
-        </footer>
     </>
 };
 

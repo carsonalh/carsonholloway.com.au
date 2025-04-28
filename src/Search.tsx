@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 type ExperienceLevel = 'weeks' | 'months' | 'years'
 
@@ -52,6 +52,7 @@ const TECHNOLOGIES: TechnologyItem[] = [
 const Search: React.FC = () => {
     const [search, setSearch] = useState('')
     const [results, setResults] = useState(TECHNOLOGIES)
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
     const onSearchChange = (newSearch: string) => {
         setSearch(newSearch)
@@ -70,43 +71,33 @@ const Search: React.FC = () => {
         setResults(newResults)
     }
 
-    const getTechnologyElementList = () => {
+    const getSearchItemAnimationList = () => {
         const elements = []
 
         // double the elements for css animation effect
         for (const i of [0, 1]) {
             for (const r of results) {
-                let imageSrc: string
-                let imageSizeClass: string
-                switch (r.experience) {
-                    case 'weeks':
-                        imageSrc = '/star-week.svg'
-                        imageSizeClass = 'size-3'
-                        break
-                    case 'months':
-                        imageSrc = '/star-month.svg'
-                        imageSizeClass = 'size-4'
-                        break
-                    case 'years':
-                        imageSrc = '/star-year.svg'
-                        imageSizeClass = 'size-6'
-                        break
-                }
-
-                const imageTitle = <><strong>{r.experience}</strong> of {r.displayName ?? r.name} experience</>
-
-                elements.push(<div className='flex flex-col gap-2 min-w-14 items-center' key={String(i) + r.name}>
-                    <div className='size-18 relative group'>
-                        <img src={`/images/${r.name}-plain.svg`} />
-                        <img className={`${imageSizeClass} absolute right-0 top-0 transform-[translateX(50%)_translateY(-50%)]`} src={imageSrc} />
-                        <div className='absolute bottom-[calc(100%+6*var(--spacing))] hidden p-2 group-hover:block z-10 text-sm text-navy bg-white cursor-default rounded-sm shadow-sm text-center'>{imageTitle}</div>
-                    </div>
-                    <span className='text-sm text-grey'>{r.displayName ?? r.name}</span>
-                </div>)
+                elements.push(
+                    <SearchItem
+                        key={String(i) + r.name}
+                        displayName={r.displayName ?? r.name}
+                        experience={r.experience}
+                        logoUrl={`/images/${r.name}-plain.svg`} />
+                )
             }
         }
 
         return elements
+    }
+
+    const getSearchItemResultList = () => {
+        return results.map(r =>
+            <SearchItem
+                key={r.name}
+                displayName={r.displayName ?? r.name}
+                experience={r.experience}
+                logoUrl={`/images/${r.name}-plain.svg`} />
+        )
     }
 
     return <>
@@ -122,13 +113,13 @@ const Search: React.FC = () => {
         <div className='h-38 flex items-center overflow-x-clip'>
             {search === ''
                 ? <div className='flex flex-row w-max h-32 gap-12 pr-12 mt-4 animate-[carousel_150s_linear_infinite]'>
-                    {getTechnologyElementList()}
+                    {getSearchItemAnimationList()}
                 </div>
                 : (
                     results.length === 0
                         ? <p className='text-grey text-center w-full'>i haven't learned '<span className="text-navy">{search}</span>' yet 😔</p>
                         : <div className='flex flex-row h-32 gap-12 justify-right mt-4'>
-                            {getTechnologyElementList().slice(0, results.length)}
+                            {getSearchItemResultList()}
                         </div>
                 )
             }
@@ -137,5 +128,32 @@ const Search: React.FC = () => {
         <p className='text-lightgrey text-right text-tiny'>shoutout to <a className='underline' href='https://devicon.dev'>devicon.dev</a> for the icons</p>
     </>
 }
+
+interface SearchItemProps {
+    logoUrl: string
+    experience: ExperienceLevel
+    displayName: string
+    showTooltip?: boolean
+}
+
+const SearchItem: React.FC<SearchItemProps> = ({logoUrl, experience: experienceLevel, displayName, showTooltip}) => {
+    const experienceIconUrl = ({
+        'weeks': '/star-week.svg',
+        'months': '/star-month.svg',
+        'years': '/star-year.svg'
+    } as const)[experienceLevel]
+
+    return <div className='flex flex-col gap-2 min-w-14 items-center' onContextMenu={e => (e.preventDefault(), false)}>
+        <div className='size-18 relative group'>
+            <img src={logoUrl} />
+            <img className={`h-3 absolute bottom-[calc(100%+1.5*var(--spacing))] right-[50%] translate-x-1/2`} src={experienceIconUrl} />
+            <div className={`absolute bottom-[calc(100%+6*var(--spacing))] ${(showTooltip && '') ?? 'hidden'} p-2 group-hover:block group-active:block z-10 text-sm text-navy bg-white cursor-default rounded-sm shadow-sm text-center`}>
+                <strong>{experienceLevel}</strong> of {displayName} experience
+            </div>
+        </div>
+        <span className='text-sm text-grey'>{displayName}</span>
+    </div>
+}
+
 
 export default Search
